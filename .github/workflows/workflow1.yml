@@ -1,0 +1,21 @@
+name: CI Pipeline (DOC1)
+
+on:
+  # manually trigger workflow runs
+  workflow_dispatch:
+  # trigger the workflow on push from the master/main branch
+  push:
+    branches: [ master ]
+
+jobs:
+  # build job
+  build:
+    name: My First Pipeline
+    # run on latest Ubuntu
+    runs-on: ubuntu-latest
+    # job's steps
+    steps:
+      # check-out your repo
+      - uses: actions/checkout@v3
+      - name: Run a one-line script
+        run: echo "Continous Integration"
